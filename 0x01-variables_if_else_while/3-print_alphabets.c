@@ -14,9 +14,9 @@ int main(void)
 		putchar(c);
 	}
 	for (c = 65; c <= 90; c++)
-        {
-                putchar(c);
-        }
+	{
+		putchar(c);
+	}
 	putchar(10);
 
 	return (0);
