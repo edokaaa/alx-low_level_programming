@@ -22,3 +22,6 @@ File name	|	Description
 7-print_tebahpla.c    |   prints all single digit numbers of base 10 starting from 0, followed by a new line.
 8-print_base16.c    |   a program that prints all the numbers of base 16 in lowercase, followed by a new line.
 9-print_comb.c    |   a program that prints all possible combinations of single-digit numbers.
+100-print_comb3.c | prints all the possible combinations of two-digit numbers without repetition.
+101-print_comb4.c | prints all the possible combinations of three-digit numbers without repetition.
+102-print_comb5.c | prints all the possible combinations of four-digit numbers (this program does not work as intended yet)
