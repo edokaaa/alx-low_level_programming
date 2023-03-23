@@ -1,0 +1,24 @@
+Pseudo code to finds and prints the largest prime factor of a number
+
+1. set the number to n
+set largest = 0;
+2. get all prime factors of n
+	get the factors of n
+		for(q = 2; 1 <= n; q++)
+			factor = i if n % i == 0
+			# for each factor found
+			# check if it is prime
+			# if it is, compare to our largest
+			set bool prime = true
+			for( i = 2; i <= factor; i++)
+				if factor % i == 0 and factor not i #not prime
+					set prime = false
+					break
+				# if no break out of the loop
+				else continue
+			if prime
+				#compare to largest
+				if factor > largest
+					largest = factor
+				continue
+return largest
