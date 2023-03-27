@@ -1,1 +1,4 @@
 .vscode
+*-main.c
+a.out
+_putchar.c
