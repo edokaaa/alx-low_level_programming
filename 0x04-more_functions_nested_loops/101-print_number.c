@@ -1,4 +1,3 @@
-#include <math.h>
 #include "main.h"
 
 /**
@@ -10,7 +9,14 @@
 */
 int _pow(int a, int b)
 {
-	return ((int)(pow((double) a, (double) b)));
+	if (b == 0)
+		return (1);
+	if (a == 0)
+		return (0);
+	return (a * _pow(a, b - 1));
+	/*
+	* return ((int)(pow((double) a, (double) b)));
+	*/
 }
 
 /**
