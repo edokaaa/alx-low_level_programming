@@ -18,9 +18,9 @@ void print_rev(char *s)
 	}
 
 	/* now loop backwards from the last char*/
-	while (i >= 0)
+	while (i > 0)
 	{
-		_putchar(*(s + i));
+		_putchar(*(s + i - 1));
 		i--;
 	}
 	_putchar('\n');
