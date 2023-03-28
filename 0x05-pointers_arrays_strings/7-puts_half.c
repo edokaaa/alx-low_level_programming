@@ -13,14 +13,18 @@ void puts_half(char *str)
 
 	/* get length of str */
 	i = 0;
-	while (*(str + i) != '\0')
-	{
-		i++;
-	}
+	for (i = 0; str[i] != '\0'; i++)
+		;
+
 	n = i / 2; /* half*/
-	while (*(str + n) != '\0')
+
+	if (i % 2 == 1)
+		n++;
+
+	/* printing the last n characters */
+	while (str[n] != '\0')
 	{
-		_putchar(*(str + n));
+		_putchar(str[n]);
 		n++;
 	}
 	_putchar('\n');
