@@ -1,9 +1,9 @@
 #include <stdio.h>
 
 /**
- * pow - calculates the exponent of a number using recursion
- * a - the base number
- * b - the exponent
+ * _pow - calculates the exponent of a number using recursion
+ * @a: the base number
+ * @b: the exponent
  * 
  * Return: a ^ b
 */
