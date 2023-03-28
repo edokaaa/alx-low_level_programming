@@ -26,7 +26,7 @@ int _pow(int a, int b)
 */
 int _atoi(char *s)
 {
-	int i, j, sign, num, sum, ch_index;
+	unsigned int i, j, sign, num, sum, ch_index;
 	char c, *ch;
 
 	ch = malloc(sizeof(char) * 50); /* character buffer */
