@@ -1,0 +1,53 @@
+A Pseudocode for a function that convert a string to an integer,
+similar to the default atoi function.
+
+
+>> Conditions
+- The string can be preceded with multiple signs (+ and -)
+- The string can contain many text
+- The string can contain multiple numbers but we are
+only interested in the first integer number
+
+
+>> Main Milestones
+
+1. get the sign
+2. get the main integer numbers
+3. store numbers in array
+4. convert these arr of char to integers
+5. return sum of integers in char array
+
+
+>> Pseudocode
+
+set sign = 0
+set number = 0
+declare c[50] (to hold our array of int characters)
+
+for char in s; char != '\0'; 
+    if char == ' ' and number = 1
+        (this implies we've passed the main integer number)
+        break out of loop
+    else 
+        continue
+    if char = '-'
+        increment sign by 1 (sign++)
+    if char in 0-9
+        (get the the characters that are numbers and store in an array)
+        add char to c (the array)
+        increment num by 1 (num++)
+
+(converts these characters to numbers)
+
+set sum = 0
+(loop through array of int chars)
+for char in array; char < lenght of array
+    (calculate the HTU value of char wrt to its position in the array)
+    add this value to sum
+
+(Add the sign to the integer)
+if sign % 2 == 1
+    sum = 0 - sum;
+
+return (sum)
+
