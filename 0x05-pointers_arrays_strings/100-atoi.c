@@ -1,5 +1,5 @@
 #include "main.h"
-#include <stdio.h>
+#include <stdlib.h>
 
 /**
  * _pow - calculates the exponent of a number using recursion
@@ -27,8 +27,9 @@ int _pow(int a, int b)
 int _atoi(char *s)
 {
 	int i, j, sign, num, sum, ch_index;
-	char c, ch[50];
+	char c, *ch;
 
+	ch = malloc(sizeof(char) * 50); /* character buffer */
 	sign = 0; /* a flag to track the sign of the integer*/
 	num = 0; /* a flag to track the end of the main integer number */
 	ch_index = 0; /* holds the length of the main integer number */
@@ -36,7 +37,6 @@ int _atoi(char *s)
 	for (i = 0; s[i] != '\0'; i++)
 	{
 		c = s[i];
-
 		/* ignore every other character after getting the main integers*/
 		if (c == ' ' && num > 0)
 			break;
@@ -64,5 +64,6 @@ int _atoi(char *s)
 	/* settling the sign of the number*/
 	if (sign % 2 == 1)
 		sum = 0 - sum;
+	free(ch);
 	return (sum);
 }
