@@ -4,6 +4,7 @@
  * cap_string - a function that capitalizes all words of a string.
  * Separators of words include:
  * space, tabulation, new line, ,, ;, ., !, ?, ", (, ), {, and }
+ * so the character they prefix should be capitalized
  * @c: the string
  *
  * Return: pointer to the capitalizes strings.
