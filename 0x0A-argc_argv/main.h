@@ -1,7 +1,6 @@
 #ifndef MAIN_H
 #define MAIN_H
 
-int main(int __attribute__ ((unused)) argc, char *argv[]);
-
+int get_change(int n);
 
 #endif /* MAIN_H */
