@@ -14,7 +14,7 @@ char *argstostr(int ac, char **av)
 	int i, j, k, length = 0;
 	char *str;
 
-	if (ac == NULL || av == NULL)
+	if (ac == 0 || av == NULL)
 		return (NULL);
 
 	/* get the length of all strings in av so as to malloc the needed memory*/
