@@ -27,7 +27,8 @@ char *argstostr(int ac, char **av)
 	}
 	/* allocate the required space, taking \n into consideration */
 	/* adding + ac (args count) will make the space enough for \n */
-	str = (char *)malloc((length * sizeof(char)) + ac);
+	/* adding + 1 for the null terminating byte */
+	str = (char *)malloc((length * sizeof(char)) + ac + 1);
 	if (str == NULL)
 		return (NULL);
 	k = 0;
