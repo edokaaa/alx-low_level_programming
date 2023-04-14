@@ -23,6 +23,6 @@ void *_calloc(unsigned int nmemb, unsigned int size)
 
 	/* set the memory to zero */
 	memset(call, 0, nmemb * size);
-	
+
 	return (call);
 }
