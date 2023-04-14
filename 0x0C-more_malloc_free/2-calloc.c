@@ -1,5 +1,6 @@
 #include "main.h"
 #include <stdlib.h>
+#include <string.h>
 
 /**
  * _calloc - calloc clone using malloc.
@@ -20,5 +21,8 @@ void *_calloc(unsigned int nmemb, unsigned int size)
 	if (call == NULL)
 		return (NULL);
 
+	/* set the memory to zero */
+	memset(call, 0, nmemb * size);
+	
 	return (call);
 }
