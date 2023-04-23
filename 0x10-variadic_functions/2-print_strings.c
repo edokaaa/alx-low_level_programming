@@ -23,7 +23,7 @@ void print_strings(const char *separator, const unsigned int n, ...)
 			printf("%s", separator);
 
 		if (current == NULL)
-			printf("nil");
+			printf("(nil)");
 		else
 			printf("%s", current);
 
