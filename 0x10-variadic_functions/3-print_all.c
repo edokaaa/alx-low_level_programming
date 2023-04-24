@@ -13,7 +13,7 @@
 void print_all(const char * const format, ...)
 {
 	va_list my;
-	unsigned int i, j;
+	unsigned int j, i;
 	char *str;
 
 	i = 0;
@@ -23,23 +23,28 @@ void print_all(const char * const format, ...)
 	j = 0;
 	while (j < i)
 	{
-		if (format[j] == 'c')
-			printf("%c", va_arg(my, int));
-		if (format[j] == 'i')
-			printf("%i", va_arg(my, int));
-		if (format[j] == 'f')
-			printf("%f", va_arg(my, double));
-		if (format[j] == 's')
+		switch (format[j++])
 		{
-			str = va_arg(my, char *);
-			if (str == NULL)
-			{
-				printf("(nil)");
+			case 'c':
+				printf("%c", va_arg(my, int));
+				break;
+			case 'i':
+				printf("%i", va_arg(my, int));
+				break;
+			case 'f':
+				printf("%f", va_arg(my, double));
+				break;
+			case 's':
+				str = va_arg(my, char *);
+				if (str == NULL)
+				{
+					printf("(nil)");
+					continue;
+				}
+				printf("%s", str);
+			default:
 				continue;
-			}
-			printf("%s", str);
 		}
-		j++;
 		if (j != i)
 			printf(", ");
 	}
