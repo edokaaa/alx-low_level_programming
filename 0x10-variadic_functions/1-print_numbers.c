@@ -25,3 +25,46 @@ void print_numbers(const char *separator, const unsigned int n, ...)
 	}
 	printf("\n");
 }
+
+void print_char(char *c)
+{
+    printf("%c", c);
+}
+void print_int(char *c)
+{
+    printf("%i", c);
+}
+void print_float(char *c)
+{
+    printf("%f", c);
+}
+void print_str(char *c)
+{
+    printf("%s", c);
+}
+
+    char *v;
+    char *fo;
+
+    fo = "cifs";
+
+
+    fmt ops[] = {
+    {"c", print_char},
+    {"i", print_int},
+    {"f", print_float},
+    {"s", print_str},
+    {NULL, NULL}
+};
+
+/**
+ * struct op - Struct op
+ *
+ * @op: The operator
+ * @f: The function associated
+ */
+typedef struct op
+{
+	char *id;
+	void (*f)(char *);
+} fmt;

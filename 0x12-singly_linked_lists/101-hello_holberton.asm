@@ -13,4 +13,4 @@ main:
 
 	leave
 section .data
-	msg db  'Hello, Holberton', 13, 10, 0
+	msg db  'Hello, Holberton', 10
