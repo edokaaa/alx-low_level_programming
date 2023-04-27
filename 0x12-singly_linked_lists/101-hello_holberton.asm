@@ -12,7 +12,5 @@ main:
 	call printf
 
 	leave
-	ret
-
 section .data
 	msg db  'Hello, Holberton', 13, 10, 0
