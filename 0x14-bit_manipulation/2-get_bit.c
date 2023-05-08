@@ -11,8 +11,14 @@
 int get_bit(unsigned long int n, unsigned int index)
 {
 	n >>= index;
-	if (n & 01)
-		return (1);
-	else
-		return (0);
+	/* if the index does not exist */
+	/* then n will be 0 becasue of the shift */
+	if (n > 0)
+	{
+		if (n & 01)
+			return (1);
+		else
+			return (0);
+	} else
+		return (-1);
 }
