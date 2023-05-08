@@ -10,15 +10,12 @@
 */
 int get_bit(unsigned long int n, unsigned int index)
 {
-	n >>= index;
-	/* if the index does not exist */
-	/* then n will be 0 becasue of the shift */
-	if (n > 0)
-	{
-		if (n & 01)
-			return (1);
-		else
-			return (0);
-	} else
+	/* out of bound error */
+	if (index > sizeof(unsigned long int) * 8)
 		return (-1);
+
+	if ((n >> index) & 1)
+		return (1);
+	else
+		return (0);
 }
