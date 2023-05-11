@@ -22,5 +22,5 @@ unsigned int flip_bits(unsigned long int n, unsigned long int m)
 		/* right shift diff to check the next bit */
 		diff >>= 1;
 	}
-	return count;
+	return (count);
 }
