@@ -13,16 +13,28 @@
 hash_table_t *hash_table_create(unsigned long int size)
 {
 	hash_table_t *new_h;
-	hash_node_t **array;
+	unsigned long int i;
 
+	/* allocating memory for the hash table */
 	new_h = malloc(sizeof(hash_table_t));
 	if (new_h == NULL)
 		return (NULL);
 
-	array = malloc(sizeof(hash_node_t) * size);
-	if (array == NULL)
+	/* allocation memoty for the array of pointers */
+	new_h->array = malloc(sizeof(hash_node_t *) * size);
+	if (new_h->array == NULL)
+	{
+		free(new_h);
 		return (NULL);
-	new_h->array = array;
+	}
+
+	/* initializing each element of the array to NULL */
+	for (i = 0; i < size; i++)
+	{
+		new_h->array[i] = NULL;
+	}
+
+	/* setting the size of the hash table */
 	new_h->size = size;
 
 	return (new_h);
