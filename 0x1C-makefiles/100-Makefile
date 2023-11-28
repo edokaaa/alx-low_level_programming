@@ -1,0 +1,28 @@
+SHELL = /bin/sh
+CC = gcc
+SRC = main.c school.c
+NAME = school
+RM = rm -f
+CFLAGS = -Wall -Werror -Wextra -pedantic
+
+.PHONY: all clean fclean oclean re
+
+all: $(OBJ)
+	$(CC) -o $(NAME) $(SRC:%.c=%.o) -Wall $(CFLAGS)
+
+%.o: %.c
+	$(CC) -c -o $@ $< -Wall $(CFLAGS)
+
+clean:
+	-$(RM) *~ $(NAME)
+
+oclean:
+	-$(RM) $(SRC:%.c=%.o)
+
+fclean: clean oclean
+	-$(RM) $(NAME)
+
+re: fclean all
+
+# Ensure that m.h exists, otherwise fail the compilation
+$(shell if [ ! -e m.h ]; then echo "Error: m.h not found"; exit 1; fi)
